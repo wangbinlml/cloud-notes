@@ -225,7 +225,7 @@ $(function () {
             e.preventDefault();
             var title = $("#titleInput").val();
             var contentId = $("#contentId").val();
-            var value = editor.getMarkdown();       // 获取 Markdown 源码
+            var value = editor.getHTML();//getMarkdown();       // 获取 Markdown 源码
             //testEditor.getHTML();           // 获取 Textarea 保存的 HTML 源码
             //testEditor.getPreviewedHTML();  // 获取预览窗口里的 HTML，在开启 watch 且没有开启 saveHTMLToTextarea 时使用
             addContent(contentId, title, value, function (data) {
@@ -242,7 +242,7 @@ $(function () {
     $("#saveContent").click(function () {
         var title = $("#titleInput").val();
         var contentId = $("#contentId").val();
-        var value = editor.getMarkdown();       // 获取 Markdown 源码
+        var value = getHTML();//editor.getMarkdown();       // 获取 Markdown 源码
         //testEditor.getHTML();           // 获取 Textarea 保存的 HTML 源码
         //testEditor.getPreviewedHTML();  // 获取预览窗口里的 HTML，在开启 watch 且没有开启 saveHTMLToTextarea 时使用
         addContent(contentId, title, value,function (data) {
