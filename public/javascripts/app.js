@@ -229,7 +229,7 @@ $(function () {
             //testEditor.getHTML();           // 获取 Textarea 保存的 HTML 源码
             //testEditor.getPreviewedHTML();  // 获取预览窗口里的 HTML，在开启 watch 且没有开启 saveHTMLToTextarea 时使用
             addContent(contentId, title, value);
-            getCenterPositionContent({_id: $("#currentCategory").val()}, 0);
+            //getCenterPositionContent({_id: $("#currentCategory").val()}, 0);
             return false;
         }
         return true;
@@ -242,7 +242,7 @@ $(function () {
         //testEditor.getHTML();           // 获取 Textarea 保存的 HTML 源码
         //testEditor.getPreviewedHTML();  // 获取预览窗口里的 HTML，在开启 watch 且没有开启 saveHTMLToTextarea 时使用
         addContent(contentId, title, value,function (data) {
-            getCenterPositionContent({_id: $("#currentCategory").val()}, 0);
+            //getCenterPositionContent({_id: $("#currentCategory").val()}, 0);
         });
     });
     // 标题输入后自动显示到重要区域列表
