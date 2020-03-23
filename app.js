@@ -69,11 +69,11 @@ app.use(function (req, res, next) {
 
 // catch 404 and forward to error handler
 app.use(function(err, req, res, next) {
-    res.status(err.status || 404).json({error: 1, msg: err.message || "资源未发现，请稍后再试"});
+    res.status(err.status || 404).json({code: 1, msg: err.message || "资源未发现，请稍后再试"});
 });
 
 app.use(function(err, req, res, next) {
-    res.status(err.status || 500).json({error: 1, msg: err.message || "服务器错误，请稍后再试"});
+    res.status(err.status || 500).json({code: 1, msg: err.message || "服务器错误，请稍后再试"});
 });
 
 module.exports = app;
