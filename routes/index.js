@@ -10,7 +10,7 @@ router.get('/', async function (req, res, next) {
         res.redirect("/admin");
     }
     res.render('index', {
-        title: '云笔记',
+        title: '晨讯-云笔记',
         msg: "请输入您的用户名和密码"
     });
 });
