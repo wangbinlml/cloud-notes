@@ -160,6 +160,7 @@ $(function () {
         }
         $('#categoryName').val('');
         $('#addOperation-dialog').modal('show');
+        $('#categoryName').focus();
     }
     function editFolder (node) {
         $('#categoryName').val(node.name);
