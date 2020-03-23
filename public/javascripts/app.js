@@ -18,6 +18,7 @@ $(function () {
     var conentHtml = "[TOC]\n### 您好!\n## 欢迎使用云笔记";
     // 初始化富文本
     var editor = editormd("editor", {
+        saveHTMLToTextarea: false,
         markdown: conentHtml, // Also, you can dynamic set Markdown text
         htmlDecode: true,  // Enable / disable HTML tag encode.
         htmlDecode: "style,script,iframe",  // Note: If enabled, you should filter some dangerous HTML tags for website security.
