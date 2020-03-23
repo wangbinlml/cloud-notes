@@ -369,9 +369,14 @@ $(function () {
         for (var i = 0; i < category.length; i++) {
             var obj = category[i];
             html += "<li class='list-li' data='" + JSON.stringify({
-                _id: obj._id,
                 type: 1,
-                name: obj.name
+                _id: obj._id,
+                name: obj.name,
+                isDefault: obj.isDefault,
+                pid: obj.pid,
+                nodeId: obj.nodeId,
+                level: obj.level,
+                code: obj.code || ""
             }) + "' title='" + obj.title + "'><div id='title'> <i class='fa fa-folder'></i>&nbsp;" + obj.name + "</div><div id='date-size'>" + moment(obj.createdAt).format("YYYY-MM-DD HH:mm:ss") + "</div></li>";
         }
         for (var i = 0; i < content.length; i++) {
@@ -407,7 +412,7 @@ $(function () {
             var data = JSON.parse($(this).attr('data'));
             if (data.type == 1) {
                 $("#currentCategory").val(data._id);
-                getCenterPositionContent(data._id, 0);
+                getCenterPositionContent(data, 0);
             } else {
                 renderContent(data._id);
             }
