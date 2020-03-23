@@ -350,9 +350,9 @@ $(function () {
                         var rdata = result.data;
                         renderItem(data, rdata);
                     }
-                    if (typeof data == 'object' && data.code == 'myFolder') {
+                    /*if (typeof data == 'object' && data.code == 'myFolder') {
                         $(".myFolder span").eq(0).trigger("click");
-                    }
+                    }*/
                 }
             }
         });
