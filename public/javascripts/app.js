@@ -367,10 +367,10 @@ $(function () {
                 name: obj.name,
                 isDefault: obj.isDefault,
                 pid: obj.pid,
-                nodeId: obj.nodeId,
+                nodeId: cdata.nodeId + '.0',
                 level: obj.level,
                 code: obj.code || ""
-            }) + "' title='" + obj.title + "'><div id='title'> <i class='fa fa-folder'></i>&nbsp;" + obj.name + "</div><div id='date-size'>" + moment(obj.createdAt).format("YYYY-MM-DD HH:mm:ss") + "</div></li>";
+            }) + "' title='" + obj.name + "'><div id='title'> <i class='fa fa-folder'></i>&nbsp;" + obj.name + "</div><div id='date-size'>" + moment(obj.createdAt).format("YYYY-MM-DD HH:mm:ss") + "</div></li>";
         }
         for (var i = 0; i < content.length; i++) {
             var obj = content[i];
