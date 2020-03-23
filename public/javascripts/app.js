@@ -405,7 +405,7 @@ $(function () {
             var data = JSON.parse($(this).attr('data'));
             if (data.type == 1) {
                 // 展开父节点
-                $('#left-tree').treeview('expandNode', data.nodeId);
+                $('#left-tree').treeview('selectNode', [data.nodeId, { silent: true }]);
                 $("#currentCategory").val(data._id);
                 getCenterPositionContent(data, 0);
             } else {
