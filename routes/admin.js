@@ -7,7 +7,7 @@ router.get('/', async function (req, res, next) {
     const user = req.session.user;
     const userId = user._id;
     res.render('admin', {
-        title: '云笔记'
+        title: '晨讯-云笔记'
     });
 });
 
