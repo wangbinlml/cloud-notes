@@ -15,15 +15,24 @@ $(function () {
     // 左侧菜单
     onLoad();
     BindEvent();
-    var conentHtml = "[TOC]\n### 您好!\n## 欢迎使用云笔记";
+
+    var conentHtml = '[TOC]\n### 您好!\n## 欢迎使用云笔记 \n 本编辑器支持Markdown编辑，左边编写，右边预览';
     // 初始化富文本
     var editor = editormd("editor", {
         markdown: conentHtml, // Also, you can dynamic set Markdown text
+        height: "84.5%",
         htmlDecode: true,  // Enable / disable HTML tag encode.
         htmlDecode: "style,script,iframe",  // Note: If enabled, you should filter some dangerous HTML tags for website security.
-        path: "bower_components/editor.md/lib/"  // Autoload modules mode, codemirror, marked... dependents libs path
+        path: "bower_components/editor.md/lib/",  // Autoload modules mode, codemirror, marked... dependents libs path
+        saveHTMLToTextarea: true,
+        tocm: true,         // Using [TOCM]
+        tex: true,                   // 开启科学公式TeX语言支持，默认关闭
+        flowChart: true,             // 开启流程图支持，默认关闭
+        sequenceDiagram: true,       // 开启时序/序列图支持，默认关闭,
+        toolbarIcons : function() {  //自定义工具栏，后面有详细介绍
+            return editormd.toolbarModes['full']; // full, simple, mini
+        },
     });
-
     //页面加载
     function onLoad() {
         $.ajax({
@@ -453,12 +462,7 @@ $(function () {
     function initForm(data) {
         $("#titleInput").val(data.title);
         $("#contentId").val(data._id);
-        editor = editormd("editor", {
-            markdown: data.content, // Also, you can dynamic set Markdown text
-            htmlDecode: true,  // Enable / disable HTML tag encode.
-            htmlDecode: "style,script,iframe",  // Note: If enabled, you should filter some dangerous HTML tags for website security.
-            path: "bower_components/editor.md/lib/"  // Autoload modules mode, codemirror, marked... dependents libs path
-        });
+        editor.setMarkdown(data.content);
     }
 
     // 保存文本
