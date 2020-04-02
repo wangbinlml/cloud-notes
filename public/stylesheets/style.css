@@ -18,8 +18,11 @@ a {
     min-height: 50px;
     margin-bottom: 0px;
     border-radius: 0px;
+    background: #3c8dbc;
 }
-
+.navbar a {
+    color: #fff;
+}
 .chapter-title {
     position: relative;
     border-bottom: 1px solid #eee;
