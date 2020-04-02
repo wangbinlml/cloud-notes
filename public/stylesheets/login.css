@@ -16,7 +16,6 @@ body {
     margin: 7% auto;
     position: relative;
     width: 900px;
-    padding-bottom: 60px;
 }
 .welcome {
     margin: 4% auto;
@@ -85,6 +84,7 @@ a{
     text-decoration: none;
 }
 .container{
+    padding-bottom: 60px;
     position: relative;
 }
 .clr{
