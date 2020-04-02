@@ -16,6 +16,7 @@ body {
     margin: 7% auto;
     position: relative;
     width: 900px;
+    padding-bottom: 60px;
 }
 .welcome {
     margin: 4% auto;
@@ -68,7 +69,7 @@ abbr,acronym { border:0;
 }
 /* General Demo Style */
 body{
-    font-family: Constantia, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+    font-family: '微软雅黑', 'Microsoft Yahei', Helvetica Neue, Hiragino Sans GB, '宋体', 'simsun', '黑体', Arial, sans-serif;
     background: #000;
     font-weight: 400;
     font-size: 15px;
