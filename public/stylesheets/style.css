@@ -21,7 +21,7 @@ a {
     background: #3c8dbc;
 }
 .navbar a {
-    color: #fff;
+    color: #fff!important;
 }
 .chapter-title {
     position: relative;
