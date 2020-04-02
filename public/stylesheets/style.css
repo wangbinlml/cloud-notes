@@ -4,7 +4,7 @@ body {
     min-width: 100%;
     overflow-x: auto;
     box-sizing: border-box;
-    font: 13px '微软雅黑', 'Microsoft Yahei', Helvetica Neue, Hiragino Sans GB, '宋体', 'simsun', '黑体', Arial, sans-serif;
+    font: 14px '微软雅黑', 'Microsoft Yahei', Helvetica Neue, Hiragino Sans GB, '宋体', 'simsun', '黑体', Arial, sans-serif;
     padding-right: 0 !important;
     position: relative;
 }
@@ -19,14 +19,9 @@ a {
     margin-bottom: 0px;
     border-radius: 0px;
     background: #3c8dbc;
+    border-color:#3c8dbc;
 }
-.navbar a {
-    color: #fff!important;
-}
-.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
-    color: #000!important;
-    background-color: #5b5b!important;
-}
+
 .chapter-title {
     position: relative;
     border-bottom: 1px solid #eee;
@@ -243,4 +238,14 @@ a {
 }
 .modal.fade.in{
     left: 10%;
+}
+.navbar a,.navbar-brand {
+    color: #fff !important;
+}
+.navbar ul li ul li a {
+    color: #000!important;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #000!important;
+    background-color: #eee;
 }
