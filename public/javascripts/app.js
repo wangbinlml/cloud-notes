@@ -338,6 +338,9 @@ $(function () {
             type: 'get',
             url: "/admin/content?pid=" + (data._id || "0") + "&type=" + type,
             asyc: false,
+            beforeSend: function (xhr) {
+                $("#content_list_loading").show();
+            },
             error: function (error) {
                 new Noty({
                     type: 'error',
@@ -345,8 +348,10 @@ $(function () {
                     text: '网络异常，请刷新页面',
                     timeout: '5000'
                 }).show();
+                $("#content_list_loading").hide();
             },
             success: function (result) {
+                $("#content_list_loading").hide();
                 if (result.code != 0) {
                     new Noty({
                         type: 'error',
@@ -493,6 +498,9 @@ $(function () {
                 url: "/admin/content",
                 asyc: false,
                 data: {categoryId: $("#currentCategory").val(), title: title, content: value, id: contentId},
+                beforeSend: function (xhr) {
+                    $("#content_load").show();
+                },
                 error: function (error) {
                     new Noty({
                         type: 'error',
@@ -500,8 +508,10 @@ $(function () {
                         text: '网络异常，请刷新页面',
                         timeout: '5000'
                     }).show();
+                    $("#content_load").hide();
                 },
                 success: function (result) {
+                    $("#content_load").hide();
                     if (result.code != 0) {
                         new Noty({
                             type: 'error',
