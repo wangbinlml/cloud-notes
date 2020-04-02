@@ -25,6 +25,7 @@ $(function () {
         htmlDecode: "style,script,iframe",  // Note: If enabled, you should filter some dangerous HTML tags for website security.
         path: "bower_components/editor.md/lib/",  // Autoload modules mode, codemirror, marked... dependents libs path
         saveHTMLToTextarea: true,
+        emoji: true,
         tocm: true,         // Using [TOCM]
         tex: true,                   // 开启科学公式TeX语言支持，默认关闭
         flowChart: true,             // 开启流程图支持，默认关闭
