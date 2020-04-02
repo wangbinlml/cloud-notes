@@ -22,8 +22,11 @@ $(function () {
         markdown: conentHtml, // Also, you can dynamic set Markdown text
         height: "84.5%",
         htmlDecode: true,  // Enable / disable HTML tag encode.
-        htmlDecode: "style,script,iframe",  // Note: If enabled, you should filter some dangerous HTML tags for website security.
+        htmlDecode: "style,script,iframe|on*",  // Note: If enabled, you should filter some dangerous HTML tags for website security.
         path: "bower_components/editor.md/lib/",  // Autoload modules mode, codemirror, marked... dependents libs path
+        imageUpload          : true,
+        imageFormats         : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+        imageUploadURL       : "/admin/upload",
         saveHTMLToTextarea: true,
         emoji: true,
         tocm: true,         // Using [TOCM]
@@ -34,6 +37,9 @@ $(function () {
             return ["undo","redo","|","bold","del","italic","quote","ucwords","uppercase","lowercase","|","h1","h2","h3","h4","h5","h6","|","list-ul","list-ol","hr","|","link","reference-link","image","code","preformatted-text","code-block","table","datetime","emoji","html-entities","pagebreak","|","goto-line","watch","preview","fullscreen","clear","search"]
             //return editormd.toolbarModes['full']; // full, simple, mini
         },
+        onload : function() {
+            console.log('onload', this);
+        }
     });
     //页面加载
     function onLoad() {
@@ -435,6 +441,9 @@ $(function () {
             type: 'get',
             url: "/admin/content/detail?id=" + id,
             asyc: false,
+            beforeSend: function (xhr) {
+                $("#content_load").show();
+            },
             error: function (error) {
                 new Noty({
                     type: 'error',
@@ -442,8 +451,10 @@ $(function () {
                     text: '网络异常，请刷新页面',
                     timeout: '5000'
                 }).show();
+                $("#content_load").hide();
             },
             success: function (result) {
+                $("#content_load").hide();
                 if (result.code != 0) {
                     new Noty({
                         type: 'error',
@@ -464,7 +475,7 @@ $(function () {
     function initForm(data) {
         $("#titleInput").val(data.title);
         $("#contentId").val(data._id);
-        editor.setMarkdown(data.content);
+        editor = editor.setMarkdown(data.content);
     }
 
     // 保存文本
